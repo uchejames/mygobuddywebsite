@@ -1,5 +1,5 @@
 function About() {
-  return <h1>Welcome to MyGoBuddy</h1>;
+  return <h1>Welcome to About Us MyGoBuddy</h1>;
 }
 
 export default About;
