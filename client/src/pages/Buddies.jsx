@@ -1,16 +1,23 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useSearchParams } from "react-router-dom";
 import BuddyCard from "../components/BuddyCard";
+import SearchBar from "../components/SearchBar";
 import buddiesData from "../data/buddies";
 
 function Buddies() {
-  const [searchTerm, setSearchTerm] = useState("");
+  const [searchParams] = useSearchParams();
+  const initialQuery = searchParams.get("q") || "";
+  const [searchTerm, setSearchTerm] = useState(initialQuery);
 
-  // Filter buddies by name or title based on search input
   const filteredBuddies = buddiesData.filter(
     (buddy) =>
       buddy.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
       buddy.title.toLowerCase().includes(searchTerm.toLowerCase())
   );
+
+  useEffect(() => {
+    setSearchTerm(initialQuery);
+  }, [initialQuery]);
 
   return (
     <div className="max-w-6xl mx-auto px-4 py-12">
@@ -18,18 +25,13 @@ function Buddies() {
         Meet Your Buddies
       </h1>
 
-      {/* Search Bar */}
-      <div className="mb-10 flex justify-center">
-        <input
-          type="text"
-          placeholder="Search by name or expertise..."
-          value={searchTerm}
-          onChange={(e) => setSearchTerm(e.target.value)}
-          className="w-full max-w-md px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-secondary focus:border-transparent"
-        />
-      </div>
+      <SearchBar
+        value={searchTerm}
+        onChange={(e) => setSearchTerm(e.target.value)}
+        placeholder="Search by name or expertise..."
+        className="mb-10"
+      />
 
-      {/* Buddy Cards */}
       {filteredBuddies.length > 0 ? (
         <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
           {filteredBuddies.map((buddy) => (
@@ -44,3 +46,4 @@ function Buddies() {
 }
 
 export default Buddies;
+// Buddies.jsx
