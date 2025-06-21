@@ -1,58 +1,69 @@
 import { Link, Outlet, useLocation } from "react-router-dom";
+import { FaHome, FaCalendarAlt, FaComments, FaUser, FaArrowLeft } from "react-icons/fa";
 
 function DashboardLayout() {
   const location = useLocation();
 
   const isActive = (path) =>
     location.pathname === path
-      ? "text-secondary font-semibold"
-      : "text-white";
+      ? "bg-white text-primary font-semibold"
+      : "text-white hover:bg-white/10";
 
   return (
-    <div className="min-h-screen flex flex-col md:flex-row">
+    <div className="min-h-screen flex flex-col md:flex-row font-poppins">
       {/* Sidebar */}
-      <aside className="w-full md:w-64 bg-primary text-white p-6 md:min-h-screen">
-        <div className="mb-8">
-          <h2 className="text-2xl font-bold">MyGoBuddy</h2>
+      <aside className="w-full md:w-64 bg-primary text-white py-6 px-4 flex-shrink-0 md:min-h-screen shadow-lg">
+        {/* Logo */}
+        <div className="mb-10 text-center">
+          <h1 className="text-3xl font-bold tracking-wide">MyGoBuddy</h1>
         </div>
 
-        <nav className="space-y-4">
+        {/* Nav Links */}
+        <nav className="space-y-2">
           <Link
             to="/dashboard"
-            className={`block transition hover:text-secondary ${isActive("/dashboard")}`}
+            className={`flex items-center gap-3 px-4 py-2 rounded-lg transition duration-200 ${isActive("/dashboard")}`}
           >
-            🏠 Dashboard
+            <FaHome className="text-lg" />
+            <span>Dashboard</span>
           </Link>
+
           <Link
             to="/dashboard/bookings"
-            className={`block transition hover:text-secondary ${isActive("/dashboard/bookings")}`}
+            className={`flex items-center gap-3 px-4 py-2 rounded-lg transition duration-200 ${isActive("/dashboard/bookings")}`}
           >
-            📅 My Bookings
+            <FaCalendarAlt className="text-lg" />
+            <span>My Bookings</span>
           </Link>
+
           <Link
             to="/messages"
-            className="block hover:text-secondary"
+            className="flex items-center gap-3 px-4 py-2 rounded-lg text-white hover:bg-white/10 transition duration-200"
           >
-            💬 Messages
+            <FaComments className="text-lg" />
+            <span>Messages</span>
           </Link>
 
           <Link
             to="/dashboard/profile"
-            className={`block transition hover:text-secondary ${isActive("/dashboard/profile")}`}
+            className={`flex items-center gap-3 px-4 py-2 rounded-lg transition duration-200 ${isActive("/dashboard/profile")}`}
           >
-            👤 Profile
+            <FaUser className="text-lg" />
+            <span>Profile</span>
           </Link>
+
           <Link
             to="/"
-            className="block transition text-white hover:text-secondary"
+            className="flex items-center gap-3 px-4 py-2 rounded-lg text-white hover:bg-white/10 mt-6 transition duration-200"
           >
-            ← Back to Home
+            <FaArrowLeft className="text-lg" />
+            <span>Back to Home</span>
           </Link>
         </nav>
       </aside>
 
       {/* Main Content */}
-      <main className="flex-1 bg-neutral p-6 overflow-y-auto">
+      <main className="flex-1 bg-neutral p-6 md:p-10 overflow-y-auto">
         <Outlet />
       </main>
     </div>
