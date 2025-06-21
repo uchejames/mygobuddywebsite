@@ -30,6 +30,13 @@ function DashboardLayout() {
             📅 My Bookings
           </Link>
           <Link
+            to="/messages"
+            className="block hover:text-secondary"
+          >
+            💬 Messages
+          </Link>
+
+          <Link
             to="/dashboard/profile"
             className={`block transition hover:text-secondary ${isActive("/dashboard/profile")}`}
           >

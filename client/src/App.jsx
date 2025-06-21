@@ -10,10 +10,21 @@ import BuddyDetail from "./pages/BuddyDetail";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 
+// Messaging Pages
+import Messages from "./pages/messages/Messages";
+import Chat from "./pages/messages/Chat";
+
 // Dashboard Layout & Pages
 import DashboardLayout from "./layouts/DashboardLayout";
 import ClientDashboardHome from "./pages/dashboard/ClientDashboardHome";
 import MyBookings from "./pages/dashboard/MyBookings";
+
+// Buddy Dashboard Layout & Pages
+import BuddyDashboardLayout from "./layouts/BuddyDashboardLayout";
+import IncomingBookings from "./pages/buddy/IncomingBookings";
+import BuddyDashboardHome from "./pages/buddy/BuddyDashboardHome";
+import MySessions from "./pages/buddy/MySessions";
+import BuddyProfile from "./pages/buddy/BuddyProfile";
 
 function App() {
   return (
@@ -77,6 +88,19 @@ function App() {
             <Route index element={<ClientDashboardHome />} />
             <Route path="bookings" element={<MyBookings />} />
           </Route>
+
+          {/* Buddy Dashboard Layout with nested routes */}
+          <Route path="/buddy-dashboard" element={<BuddyDashboardLayout />}>
+            <Route index element={<BuddyDashboardHome />} />
+            <Route path="sessions" element={<MySessions />} />
+            <Route path="profile" element={<BuddyProfile />} />
+            <Route path="bookings" element={<IncomingBookings />} />
+          </Route>
+
+          {/* Messaging Routes */}
+          <Route path="/messages" element={<Messages />} />
+          <Route path="/messages/:id" element={<Chat />} />
+
         </Routes>
 
         <Footer />
