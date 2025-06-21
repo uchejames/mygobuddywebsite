@@ -18,11 +18,11 @@ function Home() {
       <div className="max-w-7xl mx-auto px-4 py-20 space-y-20 bg-white font-poppins">
         {/* Hero Section */}
         <section className="text-center space-y-6">
-          <h1 className="text-4xl md:text-5xl font-bold text-primary font-montserrat leading-tight">
-            Welcome to <span className="text-button">MyGoBuddy</span>
+          <h1 className="text-3xl md:text-5xl font-bold text-primary font-montserrat leading-tight">
+            Your Friendly Local Companion-Anytime, Anywhere
           </h1>
-          <p className="text-lg md:text-xl text-gray-700 max-w-2xl mx-auto">
-            Your all-in-one smart assistant for managing tasks, connecting with services, and enhancing productivity.
+          <p className="text-lg md:text-xl text-gray-700 max-w-1l mx-auto">
+            Whether you're exploring a new city, settling into a new country, or just looking for someone to show you around, MyGoBuddy connects you with trusted local Buddies who are ready to help.
           </p>
         </section>
 

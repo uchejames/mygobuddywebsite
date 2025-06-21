@@ -6,6 +6,8 @@ import Footer from "./components/Footer";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Buddies from "./pages/Buddies";
+import Contact from "./pages/Contact";
+import HowItWorks from "./pages/HowitWorks"; 
 import BuddyDetail from "./pages/BuddyDetail";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
@@ -51,6 +53,14 @@ function App() {
             }
           />
           <Route
+            path="/how-it-works"
+            element={
+              <main className="flex-grow px-4 sm:px-6 md:px-10 py-8">
+                <HowItWorks />
+              </main>
+            }
+          />
+          <Route
             path="/buddies"
             element={
               <main className="flex-grow px-4 sm:px-6 md:px-10 py-8">
@@ -63,6 +73,14 @@ function App() {
             element={
               <main className="flex-grow px-4 sm:px-6 md:px-10 py-8">
                 <BuddyDetail />
+              </main>
+            }
+          />
+          <Route
+            path="/contact"
+            element={
+              <main className="flex-grow px-4 sm:px-6 md:px-10 py-8">
+                <Contact />
               </main>
             }
           />

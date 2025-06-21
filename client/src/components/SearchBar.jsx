@@ -48,9 +48,10 @@ function SearchBar({ value, onChange, placeholder = "Where are you going?", clas
         {/* Search Button */}
         <button
           onClick={onSearch}
-          className="bg-primary hover:bg-secondary text-white px-6 py-3 rounded-full font-semibold transition-all ml-3 mr-4 whitespace-nowrap"
+          className="bg-secondary hover:bg-primary text-white px-6 py-3 rounded-full font-semibold transition-all ml-3 mr-4 whitespace-nowrap"
         >
-          <Search className="w-5 h-5 inline-block" />
+          <Search className="w-5 h-5 inline-block "  />
+           Search
         </button>
       </div>
     </div>
