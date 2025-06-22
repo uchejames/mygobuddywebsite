@@ -35,79 +35,22 @@ function App() {
         <Header />
 
         <Routes>
-          {/* Public Routes with shared layout */}
-          <Route
-            path="/"
-            element={
-              <main className="flex-grow px-4 sm:px-6 md:px-10 py-8">
-                <Home />
-              </main>
-            }
-          />
-          <Route
-            path="/about"
-            element={
-              <main className="flex-grow px-4 sm:px-6 md:px-10 py-8">
-                <About />
-              </main>
-            }
-          />
-          <Route
-            path="/how-it-works"
-            element={
-              <main className="flex-grow px-4 sm:px-6 md:px-10 py-8">
-                <HowItWorks />
-              </main>
-            }
-          />
-          <Route
-            path="/buddies"
-            element={
-              <main className="flex-grow px-4 sm:px-6 md:px-10 py-8">
-                <Buddies />
-              </main>
-            }
-          />
-          <Route
-            path="/buddies/:id"
-            element={
-              <main className="flex-grow px-4 sm:px-6 md:px-10 py-8">
-                <BuddyDetail />
-              </main>
-            }
-          />
-          <Route
-            path="/contact"
-            element={
-              <main className="flex-grow px-4 sm:px-6 md:px-10 py-8">
-                <Contact />
-              </main>
-            }
-          />
-          <Route
-            path="/login"
-            element={
-              <main className="flex-grow px-4 sm:px-6 md:px-10 py-8">
-                <Login />
-              </main>
-            }
-          />
-          <Route
-            path="/signup"
-            element={
-              <main className="flex-grow px-4 sm:px-6 md:px-10 py-8">
-                <Signup />
-              </main>
-            }
-          />
+          {/* Public Routes - Clean edge-to-edge */}
+          <Route path="/" element={<main className="flex-grow"><Home /></main>} />
+          <Route path="/about" element={<main className="flex-grow"><About /></main>} />
+          <Route path="/how-it-works" element={<main className="flex-grow"><HowItWorks /></main>} />
+          <Route path="/buddies" element={<main className="flex-grow"><Buddies /></main>} />
+          <Route path="/buddies/:id" element={<main className="flex-grow"><BuddyDetail /></main>} />
+          <Route path="/contact" element={<main className="flex-grow"><Contact /></main>} />
+          <Route path="/login" element={<main className="flex-grow"><Login /></main>} />
+          <Route path="/signup" element={<main className="flex-grow"><Signup /></main>} />
 
-          {/* Dashboard Layout with nested routes (handles its own layout) */}
+          {/* Dashboard Layouts */}
           <Route path="/dashboard" element={<DashboardLayout />}>
             <Route index element={<ClientDashboardHome />} />
             <Route path="bookings" element={<MyBookings />} />
           </Route>
 
-          {/* Buddy Dashboard Layout with nested routes */}
           <Route path="/buddy-dashboard" element={<BuddyDashboardLayout />}>
             <Route index element={<BuddyDashboardHome />} />
             <Route path="sessions" element={<MySessions />} />
@@ -118,7 +61,6 @@ function App() {
           {/* Messaging Routes */}
           <Route path="/messages" element={<Messages />} />
           <Route path="/messages/:id" element={<Chat />} />
-
         </Routes>
 
         <Footer />
