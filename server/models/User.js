@@ -1,11 +1,24 @@
 const mongoose = require("mongoose");
 
 const userSchema = new mongoose.Schema({
-  name: String,
-  email: { type: String, unique: true },
-  password: String,
-  userType: { type: String, enum: ["client", "buddy"], required: true },
+  name: { type: String, required: true },
+  email: { type: String, required: true, unique: true },
+  password: { type: String, required: true },
+
+  role: {
+    type: String,
+    enum: ["client", "buddy"],
+    required: true,
+  },
+
+  avatar: { type: String },
+  expertise: { type: String },
+  bio: { type: String },
+  availability: [{ day: String, time: String }],
+  isOnline: { type: Boolean, default: false },
+  favorites: [{ type: mongoose.Schema.Types.ObjectId, ref: "User" }],
+}, {
+  timestamps: true,
 });
 
 module.exports = mongoose.model("User", userSchema);
-// This code defines a Mongoose schema for a User model in a Node.js application.
