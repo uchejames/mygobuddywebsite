@@ -9,11 +9,17 @@ function Buddies() {
   const initialQuery = searchParams.get("q") || "";
   const [searchTerm, setSearchTerm] = useState(initialQuery);
 
-  const filteredBuddies = buddiesData.filter(
-    (buddy) =>
-      buddy.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      buddy.title.toLowerCase().includes(searchTerm.toLowerCase())
-  );
+  const filteredBuddies = buddiesData.filter((buddy) => {
+    const term = searchTerm.toLowerCase();
+    return (
+      buddy.name.toLowerCase().includes(term) ||
+      buddy.title.toLowerCase().includes(term) ||
+      (buddy.languages && Array.isArray(buddy.languages) && buddy.languages.some(lang => lang.toLowerCase().includes(term))) || 
+      (buddy.location && buddy.location.toLowerCase().includes(term)) ||
+      (buddy.description && buddy.description.toLowerCase().includes(term)) ||
+      (buddy.skills && Array.isArray(buddy.skills) && buddy.skills.some(skill => skill.toLowerCase().includes(term)))
+    );
+  });
 
   useEffect(() => {
     setSearchTerm(initialQuery);
@@ -28,7 +34,7 @@ function Buddies() {
       <SearchBar
         value={searchTerm}
         onChange={(e) => setSearchTerm(e.target.value)}
-        placeholder="Search by name or expertise..."
+        placeholder="Search by location or Language..."
         className="mb-10"
       />
 
