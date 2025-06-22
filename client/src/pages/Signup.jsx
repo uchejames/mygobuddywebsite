@@ -53,7 +53,7 @@ function Signup() {
               </label>
               <div className="relative mt-1">
                 <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                  <User className="h-5 w-5 text-neutral" />
+                  <User className="h-5 w-5 text-secondary" />
                 </div>
                 <input
                   type="text"
@@ -63,7 +63,7 @@ function Signup() {
                   onChange={handleChange}
                   placeholder="John Doe"
                   required
-                  className="w-full pl-10 pr-4 py-3 border border-neutral rounded-xl bg-white focus:outline-none focus:ring-2 focus:ring-secondary focus:border-secondary transition placeholder-neutral"
+                  className="w-full pl-10 pr-4 py-3 border border-neutral rounded-xl bg-white focus:outline-none focus:ring-2 focus:ring-secondary focus:border-secondary transition placeholder-gray"
                 />
               </div>
             </div>
@@ -75,7 +75,7 @@ function Signup() {
               </label>
               <div className="relative mt-1">
                 <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                  <Mail className="h-5 w-5 text-neutral" />
+                  <Mail className="h-5 w-5 text-secondary" />
                 </div>
                 <input
                   type="email"
@@ -85,7 +85,7 @@ function Signup() {
                   onChange={handleChange}
                   placeholder="you@example.com"
                   required
-                  className="w-full pl-10 pr-4 py-3 border border-neutral rounded-xl bg-white focus:outline-none focus:ring-2 focus:ring-secondary focus:border-secondary transition placeholder-neutral"
+                  className="w-full pl-10 pr-4 py-3 border border-neutral rounded-xl bg-white focus:outline-none focus:ring-2 focus:ring-secondary focus:border-secondary transition placeholder-gray"
                 />
               </div>
             </div>
@@ -97,7 +97,7 @@ function Signup() {
               </label>
               <div className="relative mt-1">
                 <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                  <Lock className="h-5 w-5 text-neutral" />
+                  <Lock className="h-5 w-5 text-secondary" />
                 </div>
                 <input
                   type={showPassword ? "text" : "password"}
@@ -107,7 +107,7 @@ function Signup() {
                   onChange={handleChange}
                   placeholder="••••••••"
                   required
-                  className="w-full pl-10 pr-12 py-3 border border-neutral rounded-xl bg-white focus:outline-none focus:ring-2 focus:ring-secondary focus:border-secondary transition placeholder-neutral"
+                  className="w-full pl-10 pr-12 py-3 border border-neutral rounded-xl bg-white focus:outline-none focus:ring-2 focus:ring-secondary focus:border-secondary transition placeholder-gray"
                 />
                 <button
                   type="button"

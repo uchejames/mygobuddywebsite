@@ -49,6 +49,8 @@ function App() {
           <Route path="/dashboard" element={<DashboardLayout />}>
             <Route index element={<ClientDashboardHome />} />
             <Route path="bookings" element={<MyBookings />} />
+            <Route path="messages" element={<Messages />} />
+            <Route path="messages/:id" element={<Chat />} />
           </Route>
 
           <Route path="/buddy-dashboard" element={<BuddyDashboardLayout />}>
@@ -56,11 +58,9 @@ function App() {
             <Route path="sessions" element={<MySessions />} />
             <Route path="profile" element={<BuddyProfile />} />
             <Route path="bookings" element={<IncomingBookings />} />
+            <Route path="messages" element={<Messages />} />
+            <Route path="messages/:id" element={<Chat />} />
           </Route>
-
-          {/* Messaging Routes */}
-          <Route path="/messages" element={<Messages />} />
-          <Route path="/messages/:id" element={<Chat />} />
         </Routes>
 
         <Footer />

@@ -125,7 +125,7 @@ function BuddyDashboardLayout() {
             </Link>
 
             <Link
-              to="/messages"
+              to="/buddy-dashboard/messages"
               onClick={() => isMobile && setIsSidebarOpen(false)}
               className="flex items-center gap-4 px-4 py-3 rounded-xl text-white/90 hover:bg-white/10 hover:text-white hover:shadow-md transition-all duration-200"
             >
