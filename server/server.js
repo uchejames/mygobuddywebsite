@@ -19,7 +19,7 @@ app.use("/api/auth", authRoutes);
 
 // DB Connection
 mongoose.connect(process.env.MONGO_URI)
-  .then(() => console.log("MongoDB connected"))
+  .then(() => console.log("MongoDB connected "))
   .catch((err) => console.log("MongoDB error:", err));
 
 // Server
