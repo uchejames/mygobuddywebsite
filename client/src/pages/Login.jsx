@@ -1,12 +1,18 @@
 import { useState } from "react";
 import { Eye, EyeOff, Mail, Lock } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { supabase } from "../lib/supabaseClient";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function Login() {
+  const navigate = useNavigate();
+
   const [form, setForm] = useState({
     email: "",
     password: "",
   });
+
   const [showPassword, setShowPassword] = useState(false);
 
   const handleChange = (e) => {
@@ -14,14 +20,50 @@ function Login() {
     setForm((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("Logging in:", form);
-    // TODO: connect to backend API
+
+    // Step 1: Log in user
+    const { data: authData, error: authError } = await supabase.auth.signInWithPassword({
+      email: form.email,
+      password: form.password,
+    });
+
+    if (authError) {
+      toast.error("Login failed: " + authError.message);
+      return;
+    }
+
+    const user = authData.user;
+    if (!user) {
+      toast.error("User not found.");
+      return;
+    }
+
+    // Step 2: Fetch profile to get user type
+    const { data: profile, error: profileError } = await supabase
+      .from("profiles")
+      .select("userType")
+      .eq("id", user.id)
+      .single();
+
+    if (profileError) {
+      toast.error("Failed to fetch user profile.");
+      return;
+    }
+
+    toast.success("Login successful!");
+
+    // Step 3: Redirect based on userType
+    setTimeout(() => {
+      navigate(`/${profile.userType}-dashboard`);
+    }, 1500);
   };
 
   return (
     <div className="min-h-screen bg-light flex items-center justify-center px-4 py-12 relative font-poppins text-textPrimary">
+      <ToastContainer position="top-center" autoClose={3000} />
+
       {/* Background decoration */}
       <div className="absolute inset-0 overflow-hidden -z-10">
         <div className="absolute -top-40 -right-40 w-80 h-80 bg-secondary/20 rounded-full blur-3xl"></div>
@@ -31,7 +73,6 @@ function Login() {
       <div className="relative w-full max-w-md">
         {/* Main card */}
         <div className="bg-white/80 backdrop-blur-xl shadow-lg rounded-3xl p-8 border border-neutral">
-          {/* Header */}
           <div className="text-center mb-8">
             <div className="inline-flex items-center justify-center w-16 h-16 bg-secondary rounded-full mb-4 shadow-lg">
               <Lock className="w-8 h-8 text-white" />
@@ -41,7 +82,7 @@ function Login() {
           </div>
 
           <form onSubmit={handleSubmit} className="space-y-6">
-            {/* Email field */}
+            {/* Email */}
             <div>
               <label htmlFor="email" className="block text-sm font-semibold text-dark">
                 Email Address
@@ -63,7 +104,7 @@ function Login() {
               </div>
             </div>
 
-            {/* Password field */}
+            {/* Password */}
             <div>
               <label htmlFor="password" className="block text-sm font-semibold text-dark">
                 Password
@@ -100,7 +141,7 @@ function Login() {
               </a>
             </div>
 
-            {/* Login button */}
+            {/* Sign in button */}
             <button
               type="submit"
               className="w-full bg-secondary text-white py-3 rounded-xl font-semibold text-base shadow-lg hover:shadow-xl hover:scale-[1.02] transform transition duration-200 active:scale-[0.98]"
@@ -118,16 +159,10 @@ function Login() {
           </p>
         </div>
 
-        {/* Footer text */}
         <p className="text-center text-xs text-neutral mt-6">
           By signing in, you agree to our{" "}
-          <a href="#" className="hover:text-primary transition">
-            Terms of Service
-          </a>{" "}
-          and{" "}
-          <a href="#" className="hover:text-primary transition">
-            Privacy Policy
-          </a>
+          <a href="#" className="hover:text-primary transition">Terms of Service</a> and{" "}
+          <a href="#" className="hover:text-primary transition">Privacy Policy</a>
         </p>
       </div>
     </div>

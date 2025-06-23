@@ -141,12 +141,13 @@ function Contact() {
           </button>
         </form>
 
+
+
+      </div>
         {/* FAQ Section */}
         <section className=" pt-20 pb-24">
           <FAQComponent />
         </section>
-
-      </div>
     </div>
   );
 }

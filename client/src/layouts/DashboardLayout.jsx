@@ -81,9 +81,9 @@ function DashboardLayout() {
           {/* Navigation */}
           <nav className="space-y-3 flex-1">
             <Link
-              to="/dashboard"
+              to="/client-dashboard"
               onClick={() => isMobile && setIsSidebarOpen(false)}
-              className={`flex items-center gap-4 px-4 py-3 rounded-xl transition-all duration-200 ${isActive("/dashboard")}`}
+              className={`flex items-center gap-4 px-4 py-3 rounded-xl transition-all duration-200 ${isActive("/client-dashboard")}`}
             >
               <div className="w-8 h-8 flex items-center justify-center">
                 <FaHome className="text-lg" />
@@ -92,9 +92,9 @@ function DashboardLayout() {
             </Link>
 
             <Link
-              to="/dashboard/bookings"
+              to="/client-dashboard/bookings"
               onClick={() => isMobile && setIsSidebarOpen(false)}
-              className={`flex items-center gap-4 px-4 py-3 rounded-xl transition-all duration-200 ${isActive("/dashboard/bookings")}`}
+              className={`flex items-center gap-4 px-4 py-3 rounded-xl transition-all duration-200 ${isActive("/client-dashboard/bookings")}`}
             >
               <div className="w-8 h-8 flex items-center justify-center">
                 <FaCalendarAlt className="text-lg" />
@@ -103,7 +103,7 @@ function DashboardLayout() {
             </Link>
 
             <Link
-              to="/dashboard/messages"
+              to="/client-dashboard/messages"
               onClick={() => isMobile && setIsSidebarOpen(false)}
               className="flex items-center gap-4 px-4 py-3 rounded-xl text-white/90 hover:bg-white/10 hover:text-white hover:shadow-md transition-all duration-200"
             >
@@ -114,9 +114,9 @@ function DashboardLayout() {
             </Link>
 
             <Link
-              to="/dashboard/profile"
+              to="/client-dashboard/profile"
               onClick={() => isMobile && setIsSidebarOpen(false)}
-              className={`flex items-center gap-4 px-4 py-3 rounded-xl transition-all duration-200 ${isActive("/dashboard/profile")}`}
+              className={`flex items-center gap-4 px-4 py-3 rounded-xl transition-all duration-200 ${isActive("/client-dashboard/profile")}`}
             >
               <div className="w-8 h-8 flex items-center justify-center">
                 <FaUser className="text-lg" />
