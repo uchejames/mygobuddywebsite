@@ -46,8 +46,8 @@ function Footer() {
           {/* Logo and Company Info */}
           <div className="lg:col-span-1">
             <div className="flex items-center mb-4">
-              <div className="w-10 h-10 rounded-lg flex items-center justify-center mr-3" style={{backgroundColor: '#ff7043'}}>
-                <img href={logo} className="w-6 h-6 text-white fill-current" />
+              <div className="w-10 h-10 rounded-lg flex items-center justify-center mr-3" >
+                <img src="./src/assets/favicon_prev_ui.png" alt='' className="w-20 h-10 text-white" />
               </div>
               <h3 className="text-2xl font-bold text-white">MyGoBuddy</h3>
             </div>
