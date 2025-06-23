@@ -14,6 +14,7 @@ import {
 } from "lucide-react";
 import SearchBar from "../components/SearchBar";
 import Buddy from "../components/BuddyCard";
+import FAQComponent from "../components/Faq";
 
 function Home() {
   const [query, setQuery] = useState("");
@@ -296,6 +297,11 @@ function Home() {
             </Link>
           </div>
         </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section className=" pt-20 pb-24">
+        <FAQComponent />
       </section>
     </div>
   );

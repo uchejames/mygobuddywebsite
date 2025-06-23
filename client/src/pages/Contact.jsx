@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { FaPhone, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
 import { FaFacebookF, FaInstagram, FaTwitter, FaLinkedinIn } from "react-icons/fa";
+import FAQComponent from "../components/Faq";
 
 function Contact() {
   const [form, setForm] = useState({ name: "", email: "", message: "" });
@@ -139,6 +140,12 @@ function Contact() {
             Send Message
           </button>
         </form>
+
+        {/* FAQ Section */}
+        <section className=" pt-20 pb-24">
+          <FAQComponent />
+        </section>
+
       </div>
     </div>
   );
