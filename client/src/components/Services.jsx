@@ -45,7 +45,7 @@ const ServicesSection = () => {
   return (
     <section className="py-20 px-6 bg-white">
       <div className="max-w-6xl mx-auto text-center">
-        <h2 className="text-2xl md:text-5xl font-bold text-orange-600 mb-2">
+        <h2 className="text-2xl md:text-5xl font-bold text-secondary mb-2">
           Services We Offer
         </h2>
         <p className="text-gray-600 mb-12 text-sm md:text-2xl">
