@@ -114,7 +114,7 @@ function BuddyCard({
                   {isOnline ? "Available" : "Offline"}
                 </span>
                 <span className="text-lg font-bold text-gray-900">
-                  {hourlyRate}/hr
+                  {hourlyRate}
                 </span>
               </div>
             </div>
