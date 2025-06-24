@@ -11,7 +11,7 @@ function SearchBar({ value, onChange, placeholder = "Where are you going?", clas
   return (
     <div className={`flex justify-center w-full px-4 ${className}`}>
       {/* Desktop/Tablet Layout */}
-      <div className="hidden md:flex items-center bg-white bg-opacity-50 rounded-full shadow-xl my-2 py-2 max-w-5xl w-full overflow-hidden">
+      <div className="hidden md:flex items-center bg-white bg-opacity-70 rounded-full shadow-xl my-2 py-2 max-w-5xl w-full overflow-hidden">
         
         {/* Location Field */}
         <div className="flex items-center gap-3 flex-1 px-5 py-4 hover:bg-neutral transition-colors cursor-pointer">
@@ -55,7 +55,7 @@ function SearchBar({ value, onChange, placeholder = "Where are you going?", clas
         {/* Search Button */}
         <button
           onClick={onSearch}
-          className="bg-secondary hover:bg-primary text-white px-6 py-3 rounded-full font-semibold transition-all ml-3 mr-4 whitespace-nowrap flex items-center gap-2"
+          className="bg-primary hover:bg-secondary text-white px-6 py-3 rounded-full font-semibold transition-all ml-3 mr-4 whitespace-nowrap flex items-center gap-2"
         >
           <Search className="w-5 h-5" />
           Search

@@ -16,6 +16,7 @@ import SearchBar from "../components/SearchBar";
 import BuddyCard from "../components/BuddyCard";
 import buddies from "../data/buddies";
 import FAQComponent from "../components/FAQ";
+import Services from "../components/Services";
 
 function Home() {
   const [query, setQuery] = useState("");
@@ -97,7 +98,7 @@ function Home() {
       {/* Hero Section */}
       <section className="relative bg-gradient-to-br from-orange-50 via-amber-50 to-yellow-50 overflow-hidden">
         <div className="absolute inset-0 bg-white/60 bg-[url('./src/assets/heroimage.png')]"></div>
-        <div className="relative max-w-7xl mx-auto px-4 py-20 lg:pt-28 lg:pb-96">
+        <div className="relative max-w-7xl mx-auto px-4 py-20 lg:pt-32 lg:pb-80">
           <div className="text-center space-y-8">
             <div className="space-y-4">
               <h1 className="text-4xl lg:text-6xl font-bold text-[#0D405D] leading-tight">
@@ -143,6 +144,9 @@ function Home() {
           </div>
         </div>
       </section>
+              
+      <Services />
+
 
       {/* Features Section */}
       <section className="py-20 bg-white">
@@ -211,6 +215,14 @@ function Home() {
 
       {/* Featured Buddies */}
       <section className="py-20 bg-white">
+         <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              How It Works
+            </h2>
+            <p className="text-lg text-gray-600">
+              Getting started with MyGoBuddy is simple and straightforward
+            </p>
+          </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mb-12 max-w-6xl mx-auto ">
           {buddies.slice(0, 3).map((buddy) => (
     <BuddyCard key={buddy.id} {...buddy} />
