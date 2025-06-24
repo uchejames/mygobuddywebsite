@@ -11,7 +11,7 @@ function SearchBar({ value, onChange, placeholder = "Where are you going?", clas
   return (
     <div className={`flex justify-center w-full px-4 ${className}`}>
       {/* Desktop/Tablet Layout */}
-      <div className="hidden md:flex items-center bg-white rounded-full shadow-xl border border-neutral max-w-5xl w-full overflow-hidden">
+      <div className="hidden md:flex items-center bg-white bg-opacity-50 rounded-full shadow-xl my-2 py-2 max-w-5xl w-full overflow-hidden">
         
         {/* Location Field */}
         <div className="flex items-center gap-3 flex-1 px-5 py-4 hover:bg-neutral transition-colors cursor-pointer">

@@ -25,7 +25,6 @@ function Header() {
     { to: "/how-it-works", label: "How it works" },
     { to: "/buddies", label: "Browse Buddies" },
     { to: "/contact", label: "Contact Us" },
-    { to: "/FAQ", label: "FAQ" }
   ];
 
   return (

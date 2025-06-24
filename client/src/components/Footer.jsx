@@ -11,7 +11,8 @@ function Footer() {
     { name: 'Become a Buddy', href: '#become-buddy' },
     { name: 'Pricing', href: '#pricing' },
     { name: 'Safety', href: '#safety' },
-    { name: 'Support', href: '#support' }
+    { name: 'Support', href: '#support' },
+    { name: 'FAQ', href: '#faq' }
   ];
 
   const services = [

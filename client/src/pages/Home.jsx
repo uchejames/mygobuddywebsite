@@ -13,8 +13,9 @@ import {
   CheckCircle
 } from "lucide-react";
 import SearchBar from "../components/SearchBar";
-import Buddy from "../components/BuddyCard";
-import FAQComponent from "../components/Faq";
+import BuddyCard from "../components/BuddyCard";
+import buddies from "../data/buddies";
+import FAQComponent from "../components/FAQ";
 
 function Home() {
   const [query, setQuery] = useState("");
@@ -76,18 +77,18 @@ function Home() {
   const steps = [
     {
       step: "1",
-      title: "Search & Discover",
-      description: "Find verified local buddies in your destination"
+      title: "Browse Buddies",
+      description: "Find Verified locals offering Help with various tasks."
     },
     {
       step: "2",
-      title: "Connect & Chat",
-      description: "Message your chosen buddy and plan your experience"
+      title: "Book & Connect",
+      description: "Schedule a service and communicate directly with my buddy."
     },
     {
       step: "3",
-      title: "Explore Together",
-      description: "Meet up and discover the city with your local guide"
+      title: "Enjoy & Explore",
+      description: "Meet up for a personalized experience and make the most of your trip. "
     }
   ];
 
@@ -95,17 +96,17 @@ function Home() {
     <div className="bg-white">
       {/* Hero Section */}
       <section className="relative bg-gradient-to-br from-orange-50 via-amber-50 to-yellow-50 overflow-hidden">
-        <div className="absolute inset-0 bg-white/60"></div>
-        <div className="relative max-w-7xl mx-auto px-4 py-20 lg:py-32">
+        <div className="absolute inset-0 bg-white/60 bg-[url('./src/assets/heroimage.png')]"></div>
+        <div className="relative max-w-7xl mx-auto px-4 py-20 lg:pt-28 lg:pb-96">
           <div className="text-center space-y-8">
             <div className="space-y-4">
-              <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-primary leading-tight">
-                Your Friendly Local
-                <span className="text-orange-500 block">Companion</span>
+              <h1 className="text-4xl lg:text-5xl font-bold text-[#0D405D] leading-tight">
+                Your Friendly Local Companion
+                <span className="text-orange-500 block"> Anytime, Anywhere</span>
               </h1>
-              <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-                Connect with trusted local buddies who are ready to help you explore, 
-                settle in, or discover hidden gems in any city around the world.
+              <p className="text-lg md:text-xl text-primary/700 max-w-3xl mx-auto leading-relaxed">
+                Whether you're exploring a new city, settling into a new country, or just looking for someone to show you around — 
+                MyGoBuddy connects you with trusted local Buddies who are ready to help.
               </p>
             </div>
 
@@ -119,25 +120,26 @@ function Home() {
               />
             </div>
 
-            {/* Stats */}
+            {/* Stats 
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8 pt-16 max-w-4xl mx-auto">
               <div className="text-center">
                 <div className="text-3xl md:text-4xl font-bold text-orange-500 mb-2">10K+</div>
-                <div className="text-gray-600">Happy Travelers</div>
+                <div className="text-white">Happy Travelers</div>
               </div>
               <div className="text-center">
                 <div className="text-3xl md:text-4xl font-bold text-orange-500 mb-2">500+</div>
-                <div className="text-gray-600">Cities Covered</div>
+                <div className="text-white">Cities Covered</div>
               </div>
               <div className="text-center">
                 <div className="text-3xl md:text-4xl font-bold text-orange-500 mb-2">2K+</div>
-                <div className="text-gray-600">Verified Buddies</div>
+                <div className="text-white">Verified Buddies</div>
               </div>
               <div className="text-center">
                 <div className="text-3xl md:text-4xl font-bold text-orange-500 mb-2">4.9</div>
-                <div className="text-gray-600">Average Rating</div>
+                <div className="text-white">Average Rating</div>
               </div>
             </div>
+            */}
           </div>
         </div>
       </section>
@@ -209,19 +211,12 @@ function Home() {
 
       {/* Featured Buddies */}
       <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Featured Buddies
-            </h2>
-            <p className="text-lg text-gray-600">
-              Meet some of our top-rated local companions
-            </p>
-          </div>
-          
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
-            {/* Render dynamic <Buddy /> cards here */}
-          </div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mb-12 max-w-6xl mx-auto ">
+          {buddies.slice(0, 3).map((buddy) => (
+    <BuddyCard key={buddy.id} {...buddy} />
+          ))}
+        </div>
+
 
           <div className="text-center">
             <Link
@@ -232,7 +227,6 @@ function Home() {
               <ArrowRight className="w-5 h-5" />
             </Link>
           </div>
-        </div>
       </section>
 
       {/* Testimonials */}
