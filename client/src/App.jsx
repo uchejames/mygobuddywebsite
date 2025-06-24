@@ -1,6 +1,7 @@
 import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+import FAQ from "./components/FAQ";
 
 // Public Pages
 import Home from "./pages/Home";
@@ -12,6 +13,8 @@ import BuddyDetail from "./pages/BuddyDetail";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import Booking from "./pages/booking";
+
+
 
 // Messaging Pages
 import Messages from "./pages/messages/Messages";
@@ -52,6 +55,8 @@ function AppWrapper() {
         <Route path="/login" element={<main className="flex-grow"><Login /></main>} />
         <Route path="/signup" element={<main className="flex-grow"><Signup /></main>} />
         <Route path="/booking/:id" element={<main className="flex-grow"><Booking /></main>} />
+        <Route path="/faq" element={<main className="flex-grow"><FAQ /></main>} />
+
 
         {/* Client Dashboard */}
         <Route path="/client-dashboard" element={<DashboardLayout />}>

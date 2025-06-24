@@ -52,12 +52,12 @@ function About() {
       {/* Hero Section2 */}
       <section className="bg-[#ffffff] py-16 px-10">
   <div>
-    <div className="bg-[#E8F0F6] p-8 md:p-12 md:pb-0 pb-20 md:rounded-tr-[200px] md:rounded-br-[200px] md:rounded-tl-[10px] md:rounded-bl-[10px] rounded-tr-[10px] rounded-br-[200px] rounded-tl-[10px] rounded-bl-[200px] flex flex-col md:flex-row items-center gap-10">
+    <div className="bg-[#E8F0F6] p-8 md:p-12 md:pb-12 pb-20 md:rounded-tr-[200px] md:rounded-br-[200px] md:rounded-tl-[10px] md:rounded-bl-[10px] rounded-tr-[10px] rounded-br-[200px] rounded-tl-[10px] rounded-bl-[200px] flex flex-col md:flex-row items-center gap-10">
       <div className="flex-1">
         <h3 className="text-xl md:text-4xl font-[900] text-[#0D405D]">
           Connecting Travelers with Trusted Locals, Everywhere.
         </h3>
-        <p className="text-gray-800 mt-4 leading-relaxed text-sm md:text-base">
+        <p className="text-gray-800 text-justify mt-4 leading-relaxed text-sm md:text-base">
           MyGoBuddy makes travel easier, safer, and more enjoyable by connecting travelers with
           verified local buddies who are ready to help, guide, assist with tasks, or simply offer
           companionship wherever your journey takes you. Whether you're exploring a new city,
@@ -68,7 +68,7 @@ function About() {
       </div>
 
       <div className="flex-1 flex justify-center md:justify-end md:mr-10 mt-6 md:mt-0">
-        <img src="./src/assets/aboutus1.png" alt="Travel buddies" className="rounded-2xl object-cover w-[407px] h-[306px] md:rounded-b-[0] rounded-b-[200px]"/>
+        <img src="./src/assets/aboutus1.png" alt="Travel buddies" className="rounded-2xl object-cover w-[407px] h-[306px] md:rounded-b-2xl rounded-b-[200px]"/>
       </div>
     </div>
   </div>
@@ -115,7 +115,7 @@ function About() {
           {services.map((service, index) => (
             <div
               key={index}
-              className="bg-[#0C5B7E] text-white p-10 rounded-tl-[60px] rounded-br-[60px] flex flex-col items-center text-center"
+              className="bg-[#0C5B7E] text-white p-10 rounded-tl-[60px] rounded-br-[60px] flex flex-col items-center text-center transition hover:shadow-lg hover:scale-105 duration-300"
             >
               <div className="mb-4">{service.icon}</div>
               <h4 className="font-bold text-base mb-2">{service.title}</h4>
