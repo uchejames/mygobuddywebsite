@@ -100,7 +100,7 @@ function Home() {
         <div className="relative max-w-7xl mx-auto px-4 py-20 lg:pt-28 lg:pb-96">
           <div className="text-center space-y-8">
             <div className="space-y-4">
-              <h1 className="text-4xl lg:text-5xl font-bold text-[#0D405D] leading-tight">
+              <h1 className="text-4xl lg:text-6xl font-bold text-[#0D405D] leading-tight">
                 Your Friendly Local Companion
                 <span className="text-orange-500 block"> Anytime, Anywhere</span>
               </h1>
