@@ -14,8 +14,6 @@ import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import Booking from "./pages/booking";
 
-
-
 // Messaging Pages
 import Messages from "./pages/messages/Messages";
 import Chat from "./pages/messages/Chat";
@@ -55,8 +53,6 @@ function AppWrapper() {
         <Route path="/login" element={<main className="flex-grow"><Login /></main>} />
         <Route path="/signup" element={<main className="flex-grow"><Signup /></main>} />
         <Route path="/booking/:id" element={<main className="flex-grow"><Booking /></main>} />
-        <Route path="/faq" element={<main className="flex-grow"><FAQ /></main>} />
-
 
         {/* Client Dashboard */}
         <Route path="/client-dashboard" element={<DashboardLayout />}>
