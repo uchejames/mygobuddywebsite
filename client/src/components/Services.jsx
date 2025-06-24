@@ -45,10 +45,10 @@ const ServicesSection = () => {
   return (
     <section className="py-20 px-6 bg-white">
       <div className="max-w-6xl mx-auto text-center">
-        <h2 className="text-2xl md:text-3xl font-bold text-orange-600 mb-2">
+        <h2 className="text-2xl md:text-5xl font-bold text-orange-600 mb-2">
           Services We Offer
         </h2>
-        <p className="text-gray-600 mb-12 text-sm md:text-base">
+        <p className="text-gray-600 mb-12 text-sm md:text-2xl">
           More than Just a Service – It's a Human Experience
         </p>
 

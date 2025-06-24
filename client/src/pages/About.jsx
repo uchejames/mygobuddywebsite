@@ -46,7 +46,7 @@ function About() {
       {/* Mission Section */}
     <section className="bg-[#ffffff] py-10 px-10">
       <div>
-         <h2 className="text-center text-orange-500 font-bold text-2xl md:text-3xl mb-10">
+         <h2 className="text-center text-orange-500 font-extrabold text-2xl md:text-5xl mb-4">
           Our Mission
         </h2>
         <div className="p-8 md:p-12 flex flex-col md:flex-row items-center gap-10">
@@ -82,6 +82,17 @@ function About() {
             <p className="text-[#ffffff] mt-4 leading-relaxed text-sm md:text-base text-center">
               Wherever you go, there’s a local friend waiting to make your trip better.
             </p>
+
+            {/* Desktop CTA Button */}
+                      <div className="hidden lg:flex items-center justify-center w-full pt-16">
+                        <Link 
+                          to="/signup" 
+                          className="bg-orange-500 hover:bg-orange-600 text-white px-6 py-2.5 rounded-lg 
+                          font-semibold transition-all duration-200 shadow-sm hover:shadow-md"
+                        >
+                          Let’s Get Started
+                        </Link>
+                      </div>
           </div>
 
         </div>
