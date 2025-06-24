@@ -12,6 +12,7 @@ import BuddyDetail from "./pages/BuddyDetail";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import Booking from "./pages/booking";
+import CompleteBuddyProfile from "./pages/buddy/CompleteProfile";
 
 // Messaging Pages
 import Messages from "./pages/messages/Messages";
@@ -52,6 +53,7 @@ function AppWrapper() {
         <Route path="/login" element={<main className="flex-grow"><Login /></main>} />
         <Route path="/signup" element={<main className="flex-grow"><Signup /></main>} />
         <Route path="/booking/:id" element={<main className="flex-grow"><Booking /></main>} />
+        <Route path="/complete-profile" element={<main className="flex-grow"><CompleteBuddyProfile /></main>} />
 
         {/* Client Dashboard */}
         <Route path="/client-dashboard" element={<DashboardLayout />}>
