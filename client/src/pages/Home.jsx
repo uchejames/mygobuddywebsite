@@ -152,7 +152,7 @@ function Home() {
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">
               Why Choose MyGoBuddy?
             </h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
@@ -184,7 +184,7 @@ function Home() {
       <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">
               How It Works
             </h2>
             <p className="text-lg text-gray-600">
@@ -245,7 +245,7 @@ function Home() {
       <section className="py-20 bg-orange-50">
         <div className="max-w-7xl mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-primaryy mb-4">
               What Our Users Say
             </h2>
             <p className="text-lg text-gray-600">
@@ -296,7 +296,7 @@ function Home() {
               Find Your Buddy
             </Link>
             <Link
-              to="/services"
+              to="/how-it-works"
               className="border-2 border-white text-white px-8 py-3 rounded-full font-semibold hover:bg-white hover:text-orange-500 transition-colors"
             >
               Learn More
