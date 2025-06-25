@@ -1,5 +1,10 @@
 import { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation, Pagination, Autoplay } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
 import { 
   MapPin, 
   Users, 
@@ -56,19 +61,40 @@ function Home() {
       name: "Sarah Johnson",
       location: "New York",
       rating: 5,
-      text: "My buddy helped me navigate the city like a local! Couldn't have asked for better guidance.",
+      text: "MyGoBuddy made my solo trip to Mexico City unforgettable. My local Buddy was friendly, knew all the hidden gems, and made me feel safe. It's like traveling with a friend you've known for years. Really Helpful.",
       avatar: "https://images.unsplash.com/photo-1494790108755-2616b612b786?w=150&h=150&fit=crop&crop=face"
     },
     {
       name: "Michael Chen",
       location: "Tokyo",
       rating: 5,
-      text: "Amazing experience! My buddy showed me hidden gems I never would have found on my own.",
+      text: "As someone who doesn't speak Spanish, I was worried about getting around. MyGoBuddy's multilingual support and helpful Buddy turned that around. I got help with errands and even went hiking with a local!",
       avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face"
     },
     {
       name: "Emily Rodriguez",
       location: "Barcelona",
+      rating: 5,
+      text: "I needed help exploring neighborhoods before deciding where to stay long-term. My Buddy not only guided me but also helped me connect with locals. This platform is a game-changer!",
+      avatar: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&h=150&fit=crop&crop=face"
+    },
+    {
+      name: "Jack Williams",
+      location: "Madrid",
+      rating: 5,
+      text: "My buddy helped me navigate the city like a local! Couldn't have asked for better guidance.",
+      avatar: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&h=150&fit=crop&crop=face"
+    },
+    {
+      name: "Fatima ",
+      location: "Berlin",
+      rating: 5,
+      text: "Amazing experience! My buddy showed me hidden gems I never would have found on my own.",
+      avatar: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&h=150&fit=crop&crop=face"
+    },
+    {
+      name: "Alex Jasmine",
+      location: "Hong Kong",
       rating: 5,
       text: "Professional, friendly, and incredibly knowledgeable. Made my trip unforgettable!",
       avatar: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&h=150&fit=crop&crop=face"
@@ -223,7 +249,7 @@ function Home() {
               Connect with trusted and verified local buddies ready to assist you
             </p>
           </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mb-12 max-w-6xl mx-auto ">
+        <div className="grid just grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mb-12 max-w-6xl mx-auto ">
           {buddies.slice(0, 3).map((buddy) => (
     <BuddyCard key={buddy.id} {...buddy} />
           ))}
@@ -245,7 +271,7 @@ function Home() {
       <section className="py-20 bg-orange-50">
         <div className="max-w-7xl mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-primaryy mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-[#0D405D] mb-4">
               What Our Users Say
             </h2>
             <p className="text-lg text-gray-600">
@@ -253,34 +279,53 @@ function Home() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <Swiper
+              modules={[Navigation, Pagination, Autoplay]}
+              spaceBetween={24}
+              slidesPerView={1}
+              breakpoints={{
+                640: { slidesPerView: 1.2 },
+                768: { slidesPerView: 2 },
+                1024: { slidesPerView: 3 },
+              }}
+              autoplay={{
+                delay: 4000,
+                disableOnInteraction: false,
+              }}
+              pagination={{ clickable: true }}
+              navigation
+              className="px-1"
+            >
+
             {testimonials.map((testimonial, index) => (
-              <div key={index} className="bg-white rounded-2xl p-6 shadow-sm">
-                <div className="flex items-center mb-4">
-                  <img
-                    src={testimonial.avatar}
-                    alt={testimonial.name}
-                    className="w-12 h-12 rounded-full object-cover mr-4"
-                  />
-                  <div>
-                    <h4 className="font-semibold text-gray-900">{testimonial.name}</h4>
-                    <p className="text-sm text-gray-600">{testimonial.location}</p>
+              <SwiperSlide key={index}>
+                <div className="bg-white rounded-2xl p-6 shadow-sm h-full">
+                  <div className="flex items-center mb-4">
+                    <img
+                      src={testimonial.avatar}
+                      alt={testimonial.name}
+                      className="w-12 h-12 rounded-full object-cover mr-4"
+                    />
+                    <div>
+                      <h4 className="font-semibold text-gray-900">{testimonial.name}</h4>
+                      <p className="text-sm text-gray-600">{testimonial.location}</p>
+                    </div>
                   </div>
+                  <div className="flex items-center mb-3">
+                    {[...Array(testimonial.rating)].map((_, i) => (
+                      <Star key={i} className="w-5 h-5 text-yellow-400 fill-current" />
+                    ))}
+                  </div>
+                  <p className="text-gray-700 italic">"{testimonial.text}"</p>
                 </div>
-                <div className="flex items-center mb-3">
-                  {[...Array(testimonial.rating)].map((_, i) => (
-                    <Star key={i} className="w-5 h-5 text-yellow-400 fill-current" />
-                  ))}
-                </div>
-                <p className="text-gray-700 italic">"{testimonial.text}"</p>
-              </div>
+              </SwiperSlide>
             ))}
-          </div>
+          </Swiper>
         </div>
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-r from-orange-500 to-amber-500">
+      <section className="py-20 bg-[url('./src/assets/mountain1.png')] bg-auto h-fit bg-no-repeat">
         <div className="max-w-4xl mx-auto px-4 text-center">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
             Ready to Start Your Adventure?
