@@ -31,7 +31,7 @@ const FAQComponent = () => {
   );
 
   return (
-    <div className="max-w-6xl mx-auto p-6 bg-neutral min-h-screen" style={{ backgroundColor: '#f8f8f8' }}>
+    <div className="max-w-6xl mx-auto p-6 bg-neutral min-h-screen" data-aos="fade-up" style={{ backgroundColor: '#f8f8f8' }}>
       {/* Header */}
       <div className="text-center mb-8">
         <div className="inline-flex items-center justify-center w-16 h-16 rounded-full mb-4" style={{ backgroundColor: '#0a3d62' }}>

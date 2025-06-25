@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
@@ -15,8 +16,6 @@ import Signup from "./pages/Signup";
 import Booking from "./pages/booking";
 import CompleteBuddyProfile from "./pages/buddy/CompleteProfile";
 
-
-
 // Messaging Pages
 import Messages from "./pages/messages/Messages";
 import Chat from "./pages/messages/Chat";
@@ -33,13 +32,24 @@ import BuddyDashboardHome from "./pages/buddy/BuddyDashboardHome";
 import MySessions from "./pages/buddy/MySessions";
 import BuddyProfile from "./pages/buddy/BuddyProfile";
 
-// ⬇️ This wrapper is needed to use hooks like useLocation outside Router
+// AOS
+import 'aos/dist/aos.css';
+import AOS from 'aos';
+
+// ⬇️ This wrapper is needed to use hooks like useLocation outside Router 
 function AppWrapper() {
   const location = useLocation();
 
-  // List of routes to hide the footer on
-  const hideFooter = location.pathname.startsWith("/client-dashboard") || 
-                     location.pathname.startsWith("/buddy-dashboard");
+  useEffect(() => {
+    AOS.init({
+      duration: 800,
+      once: true,
+    });
+  }, []);
+
+  const hideFooter =
+    location.pathname.startsWith("/client-dashboard") ||
+    location.pathname.startsWith("/buddy-dashboard");
 
   return (
     <div className="flex flex-col min-h-screen">
@@ -58,7 +68,6 @@ function AppWrapper() {
         <Route path="/booking/:id" element={<main className="flex-grow"><Booking /></main>} />
         <Route path="/complete-profile" element={<main className="flex-grow"><CompleteBuddyProfile /></main>} />
         <Route path="/faq" element={<main className="flex-grow"><FAQ /></main>} />
-
 
         {/* Client Dashboard */}
         <Route path="/client-dashboard" element={<DashboardLayout />}>

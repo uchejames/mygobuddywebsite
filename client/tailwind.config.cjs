@@ -19,6 +19,8 @@ module.exports = {
       },
       animation: {
         'slide-down': 'slideDown 0.3s ease-out',
+        'fade-slide-down': 'fade-slide-down 0.8s ease-out forwards',
+        'fade-slide-up': 'fade-slide-up 0.8s ease-out forwards',
       },
       keyframes: {
         slideDown: {
@@ -26,6 +28,16 @@ module.exports = {
           '100%': { transform: 'translateY(0)', opacity: '1' },
         },
       },
+    },
+    keyframes: {
+    'fade-slide-down': {
+        '0%': { opacity: '0', transform: 'translateY(-30px)' },
+        '100%': { opacity: '1', transform: 'translateY(0)' },
+      },
+      'fade-slide-up': {
+        '0%': { opacity: '0', transform: 'translateY(40px)' },
+        '100%': { opacity: '1', transform: 'translateY(0)' },
+      }
     },
   },
   plugins: [],

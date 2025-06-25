@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import React from 'react';
 import { FaUsers, FaLock, FaLanguage, FaCalendarAlt, FaCommentDots, FaGlobe } from 'react-icons/fa';
 import Services from "../components/Services";
+import FAQComponent from "../components/FAQ";
 
 function About() {
   return (
@@ -135,11 +136,16 @@ function About() {
           Ready to meet your personal assistant?
         </h3>
         <Link
-          to="/browse-buddies"
+          to="/buddies"
           className="inline-block bg-[#ff7043] hover:bg-orange-600 text-white px-8 py-3 rounded-full font-medium shadow transition"
         >
           Meet Our Buddies
         </Link>
+      </section>
+
+      {/* FAQ Section */}
+      <section className=" pt-20 pb-24">
+        <FAQComponent />
       </section>
     </div>
   );

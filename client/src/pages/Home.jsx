@@ -136,7 +136,7 @@ function Home() {
         <div className="absolute inset-0 bg-white/60 bg-[url('./src/assets/heroimage.png')]"></div>
         <div className="relative max-w-7xl mx-auto px-4 py-20 lg:pt-32 lg:pb-80">
           <div className="text-center space-y-8">
-            <div className="space-y-4">
+            <div className="space-y-4 transform transition duration-1000 ease-out opacity-0 animate-fade-slide-down">
               <h1 className="text-4xl lg:text-6xl font-bold text-[#0D405D] leading-tight">
                 Your Friendly Local Companion
                 <span className="text-orange-500 block"> Anytime, Anywhere</span>
@@ -147,8 +147,7 @@ function Home() {
               </p>
             </div>
 
-            {/* Search Section */}
-            <div className="max-w-1.8xl mx-auto pt-8">
+            <div className="max-w-1.8xl mx-auto pt-8 transform transition duration-1000 ease-out opacity-0 animate-fade-slide-up">
               <SearchBar
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}
@@ -186,7 +185,7 @@ function Home() {
 
       {/* Features Section */}
       <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4">
+        <div className="max-w-7xl mx-auto px-4" data-aos="fade-up">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">
               Why Choose MyGoBuddy?
@@ -218,7 +217,7 @@ function Home() {
 
       {/* How It Works */}
       <section className="py-20 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4">
+        <div className="max-w-7xl mx-auto px-4" data-aos="fade-up">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">
               How It Works
@@ -251,35 +250,37 @@ function Home() {
 
       {/* Featured Buddies */}
       <section className="py-20 bg-white">
-         <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-4xl font-bold text-secondary mb-4">
-              Featured Buddies
-            </h2>
-            <p className="text-lg text-gray-600">
-              Connect with trusted and verified local buddies ready to assist you
-            </p>
-          </div>
-        <div className="grid  grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mb-12 w-6xl mx-10 ">
-          {buddies.slice(0, 3).map((buddy) => (
-             <BuddyCard key={buddy.id} {...buddy} />
-          ))}
-        </div>
+        <div data-aos="fade-up">
+          <div className="text-center mb-16">
+              <h2 className="text-4xl md:text-4xl font-bold text-secondary mb-4">
+                Featured Buddies
+              </h2>
+              <p className="text-lg text-gray-600">
+                Connect with trusted and verified local buddies ready to assist you
+              </p>
+            </div>
+            <div className="grid  grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mb-12 w-6xl mx-10 ">
+              {buddies.slice(0, 3).map((buddy) => (
+                <BuddyCard key={buddy.id} {...buddy} />
+              ))}
+            </div>
 
 
-          <div className="text-center">
-            <Link
-              to="/buddies"
-              className="inline-flex items-center gap-2 bg-secondary hover:bg-primary text-white px-8 py-3 rounded-full font-semibold transition-colors"
-            >
-              View All Buddies
-              <ArrowRight className="w-5 h-5" />
-            </Link>
+            <div className="text-center">
+              <Link
+                to="/buddies"
+                className="inline-flex items-center gap-2 bg-secondary hover:bg-primary text-white px-8 py-3 rounded-full font-semibold transition-colors"
+              >
+                View All Buddies
+                <ArrowRight className="w-5 h-5" />
+              </Link>
+            </div>
           </div>
       </section>
 
       {/* Testimonials */}
       <section className="py-20 bg-orange-50">
-        <div className="max-w-7xl mx-auto px-4">
+        <div className="max-w-7xl mx-auto px-4" data-aos="fade-up">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-[#0D405D] mb-4">
               What Our Users Say
