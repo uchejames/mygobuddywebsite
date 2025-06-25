@@ -102,7 +102,7 @@ function About() {
       {/* Values Section */}
       <section className="bg-gray-50 py-20 px-6">
         <div className="max-w-6xl mx-auto text-center">
-          <h2 className="text-2xl font-semibold font-montserrat text-primary mb-10">
+          <h2 className="text-4xl font-semibold font-montserrat text-primary mb-10">
             Our Core Values
           </h2>
           <div className="grid md:grid-cols-3 gap-8 text-left">
@@ -132,7 +132,7 @@ function About() {
 
       {/* Call to Action */}
       <section className="py-16 px-6 text-center">
-        <h3 className="text-xl font-semibold mb-4">
+        <h3 className="text-2xl font-semibold mb-4">
           Ready to meet your personal assistant?
         </h3>
         <Link
