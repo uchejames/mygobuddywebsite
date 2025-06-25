@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, Autoplay } from 'swiper/modules';
@@ -24,6 +24,15 @@ import FAQComponent from "../components/FAQ";
 import Services from "../components/Services";
 
 function Home() {
+  const [showFirst, setShowFirst] = useState(true);
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setShowFirst((prev) => !prev);
+    }, 5000); // change every 5 seconds
+
+    return () => clearInterval(interval); // cleanup
+  }, []);
+
   const [query, setQuery] = useState("");
   const navigate = useNavigate();
 
@@ -118,6 +127,7 @@ function Home() {
       description: "Meet up for a personalized experience and make the most of your trip. "
     }
   ];
+  
 
   return (
     <div className="bg-white">
@@ -249,9 +259,9 @@ function Home() {
               Connect with trusted and verified local buddies ready to assist you
             </p>
           </div>
-        <div className="grid just grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mb-12 max-w-6xl mx-auto ">
+        <div className="grid  grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mb-12 w-6xl mx-10 ">
           {buddies.slice(0, 3).map((buddy) => (
-    <BuddyCard key={buddy.id} {...buddy} />
+             <BuddyCard key={buddy.id} {...buddy} />
           ))}
         </div>
 
@@ -259,7 +269,7 @@ function Home() {
           <div className="text-center">
             <Link
               to="/buddies"
-              className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white px-8 py-3 rounded-full font-semibold transition-colors"
+              className="inline-flex items-center gap-2 bg-secondary hover:bg-primary text-white px-8 py-3 rounded-full font-semibold transition-colors"
             >
               View All Buddies
               <ArrowRight className="w-5 h-5" />
@@ -325,30 +335,47 @@ function Home() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-[url('./src/assets/mountain1.png')] bg-auto h-fit bg-no-repeat">
-        <div className="max-w-4xl mx-auto px-4 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-            Ready to Start Your Adventure?
-          </h2>
-          <p className="text-xl text-orange-100 mb-8">
-            Join thousands of travelers who've discovered the world with local buddies
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link
-              to="/buddies"
-              className="bg-white text-orange-500 px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transition-colors"
-            >
-              Find Your Buddy
-            </Link>
-            <Link
-              to="/how-it-works"
-              className="border-2 border-white text-white px-8 py-3 rounded-full font-semibold hover:bg-white hover:text-orange-500 transition-colors"
-            >
-              Learn More
-            </Link>
+      <section className="relative py-20 h-fit bg-no-repeat bg-auto overflow-hidden" style={{ backgroundImage: "url('./src/assets/mountain1.png')" }}>
+  <div className="absolute inset-0 bg-white/20 backdrop-blur-[1px] pointer-events-none"></div>
+  <div className="relative z-10">
+        <div className="max-w-4xl mx-auto px-4 text-center my-10">
+        {showFirst ? (
+          <div key="message-1" className="transition-opacity duration-500 ease-in-out mb-10">
+            <h2 className="text-3xl md:text-5xl font-bold text-black mb-6">
+              Ready to Start Your Adventure?
+            </h2>
+            <p className="text-2xl text-black mb-8">
+              Join thousands of travelers who've discovered the world with local buddies
+            </p>
           </div>
+        ) : (
+          <div key="message-2" className="transition-opacity duration-500 ease-in-out">
+            <h2 className="text-3xl md:text-5xl font-bold text-black mb-6">
+              Let’s Find You A Buddy
+            </h2>
+            <p className="text-2xl text-black mb-8">
+              Connect with verified mygobuddy individuals and get the best of your stay while exploring with confidence
+            </p>
+          </div>
+        )}
+
+        <div className="flex flex-col sm:flex-row gap-4 justify-center my-12">
+          <Link
+            to="/buddies"
+            className="bg-secondary text-white px-8 py-3 rounded-xl font-semibold hover:bg-primary transition-colors"
+          >
+            Find Your Buddy
+          </Link>
+          <Link
+            to="/how-it-works"
+            className="bg-white text-secondary px-8 py-3 rounded-xl font-semibold hover:bg-primary hover:text-white hover:border-none transition-colors"
+          >
+            Learn More
+          </Link>
         </div>
-      </section>
+      </div>
+  </div>
+</section>
 
       {/* FAQ Section */}
       <section className=" pt-20 pb-24">
