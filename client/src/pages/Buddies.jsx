@@ -27,10 +27,12 @@ function Buddies() {
 
   return (
     <div className="max-w-6xl mx-auto px-4 py-12">
-      <h1 className="text-3xl font-bold text-center text-primary mb-6">
-        Meet Your Buddies
+      <h1 className="text-5xl font-bold text-center text-primary mb-6">
+        Meet <span className="text-secondary">Your</span> Buddies
       </h1>
-
+      <p className="text-center text-gray-600 mb-8 max-w-2xl mx-auto">
+        Browse through our diverse range of buddies ready to assist you with various tasks.         Search by location, language, or skills to find the perfect buddy for your needs.
+      </p>
       <SearchBar
         value={searchTerm}
         onChange={(e) => setSearchTerm(e.target.value)}

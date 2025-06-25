@@ -1,6 +1,5 @@
 import React from 'react';
 import { Facebook, Twitter, Instagram, Linkedin, Mail, Phone, MapPin, Heart } from 'lucide-react';
-import logo from '../assets/favicon.png'; // Adjust the path as necessary
 
 function Footer() {
   const currentYear = new Date().getFullYear();

@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { UserPlus, Search, CalendarCheck, MessageCircle, Handshake, SquarePen, CheckCircle } from "lucide-react";
 
 function HowItWorks() {
@@ -77,9 +78,9 @@ function HowItWorks() {
         </h2>
 
       <div className="text-center mt-6">
-        <a href="/browse-buddies" className="bg-orange-500 hover:bg-orange-600 text-white font-semibold px-8 py-3 rounded-xl transition-colors duration-300 inline-block">
+        <Link to="/buddies" className="bg-orange-500 hover:bg-orange-600 text-white font-semibold px-8 py-3 rounded-xl transition-colors duration-300 inline-block">
           Find a Buddy Now
-        </a>
+        </Link>
       </div>
     </div>
   );

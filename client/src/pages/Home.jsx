@@ -216,11 +216,11 @@ function Home() {
       {/* Featured Buddies */}
       <section className="py-20 bg-white">
          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              How It Works
+            <h2 className="text-4xl md:text-4xl font-bold text-secondary mb-4">
+              Featured Buddies
             </h2>
             <p className="text-lg text-gray-600">
-              Getting started with MyGoBuddy is simple and straightforward
+              Connect with trusted and verified local buddies ready to assist you
             </p>
           </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mb-12 max-w-6xl mx-auto ">
