@@ -1,5 +1,6 @@
 import React from 'react';
 import { Facebook, Twitter, Instagram, Linkedin, Mail, Phone, MapPin, Heart } from 'lucide-react';
+import favicon from '/public/favicon_prev_ui.png';
 
 function Footer() {
   const currentYear = new Date().getFullYear();
@@ -47,7 +48,7 @@ function Footer() {
           <div className="lg:col-span-1">
             <div className="flex items-center mb-4">
               <div className="w-10 h-10 rounded-lg flex items-center justify-center mr-3" >
-                <img src="/public/favicon_prev_ui.png" alt='' className="w-20 h-10 text-white" />
+                <img src={favicon} alt='' className="w-20 h-10 text-white" />
               </div>
               <h3 className="text-2xl font-bold text-white">MyGoBuddy</h3>
             </div>

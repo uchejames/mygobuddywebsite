@@ -3,6 +3,8 @@ import React from 'react';
 import { FaUsers, FaLock, FaLanguage, FaCalendarAlt, FaCommentDots, FaGlobe } from 'react-icons/fa';
 import Services from "../components/Services";
 import FAQComponent from "../components/FAQ";
+import about from '/public/aboutus1.png';
+import Mission from '/public/mission1.png';
 
 function About() {
   return (
@@ -37,7 +39,7 @@ function About() {
       </div>
 
       <div className="flex-1 flex justify-center md:justify-end md:mr-10 mt-6 md:mt-0">
-        <img src="/public/aboutus1.png" alt="Travel buddies" className="rounded-2xl object-cover w-[407px] h-[306px] md:rounded-b-2xl rounded-b-[200px]"/>
+        <img src={about} alt="Travel buddies" className="rounded-2xl object-cover w-[407px] h-[306px] md:rounded-b-2xl rounded-b-[200px]"/>
       </div>
     </div>
   </div>
@@ -52,7 +54,7 @@ function About() {
         </h2>
         <div className="p-8 md:p-12 flex flex-col md:flex-row items-center gap-10">
           <div className="flex justify-end mr-10">
-            <img src="/public/mission1.png" alt="Travel buddies" className="rounded-2xl object-cover w-[407px] h-[306px]"/>
+            <img src={Mission} alt="Travel buddies" className="rounded-2xl object-cover w-[407px] h-[306px]"/>
           </div>
 
           <div className="flex-1">
