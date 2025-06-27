@@ -346,7 +346,7 @@ function Home() {
               Ready to Start Your Adventure?
             </h2>
             <p className="text-2xl text-black mb-8">
-              Join thousands of travelers who've discovered the world with local buddies
+              Join thousands of travelers who've discovered the world with local buddies.
             </p>
           </div>
         ) : (
