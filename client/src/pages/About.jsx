@@ -37,7 +37,7 @@ function About() {
       </div>
 
       <div className="flex-1 flex justify-center md:justify-end md:mr-10 mt-6 md:mt-0">
-        <img src="/public/assets/aboutus1.png" alt="Travel buddies" className="rounded-2xl object-cover w-[407px] h-[306px] md:rounded-b-2xl rounded-b-[200px]"/>
+        <img src="/public/aboutus1.png" alt="Travel buddies" className="rounded-2xl object-cover w-[407px] h-[306px] md:rounded-b-2xl rounded-b-[200px]"/>
       </div>
     </div>
   </div>
@@ -52,7 +52,7 @@ function About() {
         </h2>
         <div className="p-8 md:p-12 flex flex-col md:flex-row items-center gap-10">
           <div className="flex justify-end mr-10">
-            <img src="/public/assets/mission1.png" alt="Travel buddies" className="rounded-2xl object-cover w-[407px] h-[306px]"/>
+            <img src="/public/mission1.png" alt="Travel buddies" className="rounded-2xl object-cover w-[407px] h-[306px]"/>
           </div>
 
           <div className="flex-1">
@@ -74,7 +74,7 @@ function About() {
     <Services />
 
     {      /* adventure Section */}
-      <section className="bg-[#ffffff] py-16 px-10 bg-[url('./public/assets/adventure.png')] bg-auto bg-center h-screen bg-no-repeat">
+      <section className="bg-[#ffffff] py-16 px-10 bg-[url('/public/adventure.png')] bg-auto bg-center h-screen bg-no-repeat">
         <div className="flex flex-col md:flex-row items-center gap-10">
           <div className="flex-1 mt-24">
             <h3 className="text-xl md:text-4xl font-[900] text-[#ffffff] text-center">

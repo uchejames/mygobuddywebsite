@@ -133,7 +133,7 @@ function Home() {
     <div className="bg-white">
       {/* Hero Section */}
       <section className="relative bg-gradient-to-br from-orange-50 via-amber-50 to-yellow-50 overflow-hidden">
-        <div className="absolute inset-0 bg-white/60 bg-[url('/public/assets/heroimage.png')]"></div>
+        <div className="absolute inset-0 bg-white/60 bg-[url('/public/heroimage.png')]"></div>
         <div className="relative max-w-7xl mx-auto px-4 py-20 lg:pt-32 lg:pb-80">
           <div className="text-center space-y-8">
             <div className="space-y-4 transform transition duration-1000 ease-out opacity-0 animate-fade-slide-down">
@@ -336,7 +336,7 @@ function Home() {
       </section>
 
       {/* CTA Section */}
-      <section className="relative py-20 h-fit bg-no-repeat bg-auto overflow-hidden" style={{ backgroundImage: "url('/public/assets/mountain1.png')" }}>
+      <section className="relative py-20 h-fit bg-no-repeat bg-auto overflow-hidden" style={{ backgroundImage: "url('/public/mountain1.png')" }}>
   <div className="absolute inset-0 bg-white/20 backdrop-blur-[1px] pointer-events-none"></div>
   <div className="relative z-10">
         <div className="max-w-4xl mx-auto px-4 text-center my-10">

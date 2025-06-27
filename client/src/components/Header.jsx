@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
-import logo from "/public/assets/logo-trns.png";
+import logo from "/public/logo-trns.png";
  
 function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
