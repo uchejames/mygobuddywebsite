@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { FaPhone, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
 import { FaFacebookF, FaInstagram, FaTwitter, FaLinkedinIn } from "react-icons/fa";
-import FAQComponent from "../components/Faq";
+import FAQComponent from "../components/FAQ";
 
 function Contact() {
   const [form, setForm] = useState({ name: "", email: "", message: "" });
