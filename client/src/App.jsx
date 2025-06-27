@@ -9,11 +9,11 @@ import Home from "./pages/Home";
 import About from "./pages/About";
 import Buddies from "./pages/Buddies";
 import Contact from "./pages/Contact";
-import HowItWorks from "./pages/HowItWorks"; 
+import HowItWorks from "./pages/HowitWorks"; 
 import BuddyDetail from "./pages/BuddyDetail";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
-import Booking from "./pages/Booking";
+import Booking from "./pages/booking";
 import CompleteBuddyProfile from "./pages/buddy/CompleteProfile";
 
 // Messaging Pages
