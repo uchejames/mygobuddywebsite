@@ -85,15 +85,15 @@ function About() {
             </p>
 
             {/* Desktop CTA Button */}
-                      <div className="hidden lg:flex items-center justify-center w-full pt-16">
-                        <Link 
-                          to="/signup" 
-                          className="bg-orange-500 hover:bg-orange-600 text-white px-6 py-2.5 rounded-lg 
-                          font-semibold transition-all duration-200 shadow-sm hover:shadow-md"
-                        >
-                          Let’s Get Started
-                        </Link>
-                      </div>
+                <div className="hidden lg:flex items-center justify-center w-full pt-16">
+                  <Link 
+                    to="/signup" 
+                    className="bg-orange-500 hover:bg-orange-600 text-white px-6 py-2.5 rounded-lg 
+                    font-semibold transition-all duration-200 shadow-sm hover:shadow-md"
+                  >
+                    Let’s Get Started
+                  </Link>
+                </div>
           </div>
 
         </div>

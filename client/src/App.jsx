@@ -9,7 +9,7 @@ import Home from "./pages/Home";
 import About from "./pages/About";
 import Buddies from "./pages/Buddies";
 import Contact from "./pages/Contact";
-import HowItWorks from "./pages/HowitWorks"; 
+import HowItWorks from "./pages/HowItWorks"; 
 import BuddyDetail from "./pages/BuddyDetail";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
