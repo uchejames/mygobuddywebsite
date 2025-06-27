@@ -256,7 +256,7 @@ function Home() {
                 Featured Buddies
               </h2>
               <p className="text-lg text-gray-600">
-                Connect with trusted and verified local buddies ready to assist you
+                Connect with trusted and verified local buddies ready to assist you.
               </p>
             </div>
             <div className="grid  grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mb-12 w-6xl mx-10 ">
