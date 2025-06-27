@@ -13,7 +13,7 @@ import HowItWorks from "./pages/HowItWorks";
 import BuddyDetail from "./pages/BuddyDetail";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
-import Booking from "./pages/booking";
+import Booking from "./pages/Booking";
 import CompleteBuddyProfile from "./pages/buddy/CompleteProfile";
 
 // Messaging Pages
